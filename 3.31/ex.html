@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Animal() {
+
+    }
+    Animal.prototype.type = '动物'
+    Animal.prototype.leg = '四个'
+    function Cat() {
+
+    }
+    Cat.prototype = new Animal()
+    Cat.prototype.skill = '捕捉'
+    function Tiger() {
+
+    }
+    Tiger.prototype = new Cat
+    Tiger.prototype.body = 'big'
+    var tiger = new Tiger()
+    console.log(tiger)
+</script>
+</body>
+</html>
