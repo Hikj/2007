@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 属性表达式 */
+        // let obj = {
+        //     name : "jiji"
+        // }
+        // //方法一
+        // obj.foo = true;
+
+        // // 方法二
+        // obj['a' + 'bc'] = 123;
+        // console.log(obj);
+
+
+        /* 方法表达式 */
+        let obj = {
+            ['j' + 'i'](){
+                return 'hi world';
+            }
+        }
+        console.log(obj.ji);
+    </script>
+</body>
+</html>
