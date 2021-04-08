@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实例化 XHR
+        // let xhr = new XMLHttpRequest();
+
+        // // 监听状态
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.readyState==4&&xhr.status==200){
+        //         console.log(xhr.responseText)
+        //         // 接收服务器响应的数据
+        //         let json_str = xhr.responseText;
+        //         // 将JSON字符串转为JS对象
+        //         let obj = JSON.parse(json_str);
+        //         console.log(obj);
+        //         console.log(obj.name);
+        //         console.log(obj.age)
+        //     }
+        // }
+
+        // // 打开链接
+        // xhr.open("get","http://localhost/4.7/a.php");
+
+        // // 发送请求
+        // xhr.send();
+    </script>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        function ajax(get,location){
+            // 实例化 XHR
+            let xhr = new XMLHttpRequest();
+            // 监听状态
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4&& xhr.status==200){
+                    //接受php响应的数据
+                    let json_str = xhr.responseText;
+                    //将JSON字符串转为js对象
+                    let obj = JSON.parse(json_str);
+                    console.log(obj);
+        //         console.log(obj.name);
+        //         console.log(obj.age)
+                }
+            }
+            xhr.open(get,location);
+            xhr.send();
+        }
+        ajax("get","http://localhost/4.7/a.php");
+    }
+</script>

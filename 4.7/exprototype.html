@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        调用完该方法，原数组只留下非重复的数据
+        返回一个数组，里面是依次出现的重复元素
+        */
+    Array.prototype.distinct = function () {
+        var removeArr = [], retainArr = [];
+        for (var i = 0; i < this.length; i ++) {
+            var elem = this[i];
+            if (this.indexOf(elem) !== i ) {
+                removeArr.push(elem);
+            }
+            else {
+                retainArr.push(elem);
+            }
+        }
+        this.splice(0);
+        for (var i = 0; i < retainArr.length; i ++) {
+            this.push(retainArr[i]);
+        }
+        return removeArr;
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>距离五一假期倒计时</title>  
+</head >  
+<body onload="countTime()" >  
+    <div>  
+        <span id="_d"><b>00</b></span>  
+        <span id="_h"><b>00</b></span>  
+        <span id="_m"><b>00</b></span>  
+        <span id="_s"><b>00</b></span>  
+    </div>  
+</body>  
+<script type="text/javascript">  
+    function countTime() {  
+        //获取当前时间  
+        var date = new Date();  
+        var now = date.getTime();  
+        //设置截止时间  
+        var str="2021/5/1 00:00:00";
+        var endDate = new Date(str); 
+        var end = endDate.getTime();  
+        
+        //时间差  
+        var leftTime = end-now; 
+        //定义变量 d,h,m,s保存倒计时的时间  
+        var d,h,m,s;  
+        if (leftTime>=0) {  
+            d = Math.floor(leftTime/1000/60/60/24);  
+            h = Math.floor(leftTime/1000/60/60%24);  
+            m = Math.floor(leftTime/1000/60%60);  
+            s = Math.floor(leftTime/1000%60);                     
+        }  
+        //将倒计时赋值到div中  
+        document.getElementById("_d").innerHTML = "距离五一假期："+d+"天";  
+        document.getElementById("_h").innerHTML = h+":";  
+        document.getElementById("_m").innerHTML = m+":";  
+        document.getElementById("_s").innerHTML = s;  
+        //递归每秒调用countTime方法，显示动态时间效果  
+        setTimeout(countTime,1000);  
+
+    }  
+</script>  
+</html>
